@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Register.module.css'
 // import RegisterImage from '../../assets/images/RegisterImage.png'
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button'
 
 export default function Register() {
@@ -18,6 +18,12 @@ export default function Register() {
     isAgreed: false,
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    userName: "",
+    mobile: "",
+  });
   const [nameError, setNameError] = useState(false);
   const [userNameError, setUserNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -28,46 +34,63 @@ export default function Register() {
     // 'Event' works like a parameter
     // console.log(event.target.name);
     // console.log(event.target.value);
-    if(event.target.name =="check"){
-      setFormData({ ...formData,[event.target.name]: event.target.checked});
-    console.log(formData);
-    }else{
-      setFormData({ ...formData,[event.target.name]: event.target.value});
-    console.log(formData);
+    if (event.target.name == "check") {
+      setFormData({ ...formData, [event.target.name]: event.target.checked });
+      console.log(formData);
+    } else {
+      setFormData({ ...formData, [event.target.name]: event.target.value });
+      console.log(formData);
     }
   };
 
   const handleSubmit = (event) => {
     // console.log(formData);
-    let isValid = true;
+    // let isValid = true;
     event.preventDefault();
-    if(!formData.name.trim().length) {
+    const errors = {};
+    if (!formData.name.trim().length) {
       setNameError(true);
-      isValid = false;
+      // setNameError({ ...errors, name: "Dynamic error message" })
+      errors.name = "Name Rquired";
+      // isValid = false;
     }
-    if(!formData.email.trim().length) {
+    if (!formData.email.trim().length) {
       setEmailError(true);
-      isValid = false;
+      errors.email = "Email is Rquired";
+      // isValid = false;
 
     }
-    if(!formData.userName.trim().length) {
+    if (!formData.userName.trim().length) {
       setUserNameError(true);
-      isValid = false;
+      errors.userName = "UserName is Rquired";
+      // isValid = false;
 
     }
-    if(!formData.mobile.trim().length) {
+    if (!formData.mobile.trim().length) {
       setMobileError(true);
-      isValid = false;
+      errors.mobile = "Mobile Number is Rquired";
+      // isValid = false;
     }
-    if(!formData.isAgreed) {
+    if (!formData.isAgreed) {
       setIsAgreedError(true);
-      isValid = false;
+      errors.isAgreed = "Check this box if you want to proceed";
+      // isValid = false;
     }
-    if(isValid){
-    localStorage.setItem("userData", formData);
+    // if(isValid){
+    // localStorage.setItem("userData", formData);
     // navigate("/genre")
+    // }
+
+    setErrors(errors);
+
+    if (!Object.keys(errors).length) {
+      localStorage.setItem("userData", JSON.stringify(formData));
+      navigate("/genre");
     }
   };
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -84,34 +107,34 @@ export default function Register() {
 
             <input type='text' name='name' placeholder='Enter your name' onChange={(event) => handleChange(event)} className={styles.name} id={styles.name_input}></input>
             {nameError ? (
-              <p className={styles.error}>Field is Required</p>
+              <p className={styles.error}>{errors.name}</p>
             ) : (<></>)}
 
             <input type='text' name='userName' placeholder='Username' onChange={(event) => handleChange(event)} className={styles.name}></input>
             {userNameError ? (
-              <p className={styles.error}>Field is Required</p>
+              <p className={styles.error}>{errors.userName}</p>
             ) : (<></>)}
 
             <input type='Email' name='email' placeholder='Email' onChange={(event) => handleChange(event)} className={styles.name}></input>
             {emailError ? (
-              <p className={styles.error}>Field is Required</p>
+              <p className={styles.error}>{errors.email}</p>
             ) : (<></>)}
 
             <input type='text' name='mobile' placeholder='Mobile' onChange={(event) => handleChange(event)} className={styles.name} minLength={10} maxLength={10}></input>
             {mobileError ? (
-              <p className={styles.error}>Field is Required</p>
+              <p className={styles.error}>{errors.mobile}</p>
             ) : (<></>)}
 
             <label className={styles.check}>
               <input
-                onChange={(e) => setFormData({...formData,[e.target.name]: e.target.checked})}
+                onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.checked })}
                 // onChange={(event) => handleChange(event)}
                 type='checkbox'
                 name='isAgreed'
               />&nbsp;
               Share my registration data with Superapp
             </label>
-            {isAgreedError ? (<p className={styles.error}>Please Check this box if you want to proceed</p>) : (<></>)}
+            {isAgreedError ? (<p className={styles.error}>{errors.isAgreed}</p>) : (<></>)}
 
             <Button onClick={handleSubmit}>SIGN UP</Button>
             <div className={styles.agree}>By clicking on Sign up. you agree to Superapp <span className={styles.terms}> <a href='#'>Terms and Conditions of Use</a></span></div>
