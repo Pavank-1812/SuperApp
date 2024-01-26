@@ -27,7 +27,7 @@ export default function Register() {
   const handleChange = (event) => {
     // 'Event' works like a parameter
     // console.log(event.target.name);
-    // console.log(event.target.value)
+    // console.log(event.target.value);
     if(event.target.name =="check"){
       setFormData({ ...formData,[event.target.name]: event.target.checked});
     console.log(formData);
@@ -65,7 +65,7 @@ export default function Register() {
     }
     if(isValid){
     localStorage.setItem("userData", formData);
-    navigate("/genre")
+    // navigate("/genre")
     }
   };
   return (
@@ -104,16 +104,14 @@ export default function Register() {
 
             <label className={styles.check}>
               <input
-                // onChange={(e) => setFormData({...formData,[e.target.name]: e.target.checked})}
-                onChange={(event) => handleChange(event)}
+                onChange={(e) => setFormData({...formData,[e.target.name]: e.target.checked})}
+                // onChange={(event) => handleChange(event)}
                 type='checkbox'
-                name='check'
+                name='isAgreed'
               />&nbsp;
               Share my registration data with Superapp
             </label>
-            {isAgreedError ? (
-              <p className={styles.error}>Please Check this box if you want to proceed</p>
-            ) : (<></>)}
+            {isAgreedError ? (<p className={styles.error}>Please Check this box if you want to proceed</p>) : (<></>)}
 
             <Button onClick={handleSubmit}>SIGN UP</Button>
             <div className={styles.agree}>By clicking on Sign up. you agree to Superapp <span className={styles.terms}> <a href='#'>Terms and Conditions of Use</a></span></div>
