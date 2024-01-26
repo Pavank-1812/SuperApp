@@ -1,0 +1,14 @@
+.signup {
+    outline: none;
+    border: none;
+    height: 5vh;
+    width: 23vw;
+    background: #72DB73;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: .8px;
+    border-radius: 28px;
+    padding: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
