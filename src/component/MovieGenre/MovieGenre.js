@@ -98,7 +98,7 @@ const Category = () => {
             return;
         }
         localStorage.setItem("genre", categories);
-        navigate("/home");
+        navigate("/");
     };
 
     return (
