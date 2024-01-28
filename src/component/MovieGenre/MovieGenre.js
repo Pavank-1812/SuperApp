@@ -87,9 +87,10 @@ const Category = () => {
     const removeCategory = (value) => {
         const newCategoryList = categories.filter(
             (category) => category !== value
-        );
-        setCategories(newCategoryList);
-    };
+            );
+            setCategories(newCategoryList);
+            // console.log(newCategoryList);
+        };
 
     const handleSubmit = () => {
         if (!categories.length) {
@@ -97,7 +98,7 @@ const Category = () => {
             return;
         }
         localStorage.setItem("genre", categories);
-        navigate("/");
+        navigate("/home");
     };
 
     return (
@@ -109,7 +110,7 @@ const Category = () => {
                 </p>
                 <div style={{ marginTop: "10vh" }}>
                     {categories.map((category) => (
-                        <div key={category} style={{ padding:"4px",color: "white", background:"#148A08", borderRadius:"16px", width:"120px",height:"32px", marginTop:"10px"}}>
+                        <div key={category} style={{ padding:"4px",color: "white", background:"#148A08", borderRadius:"16px", width:"130px",height:"32px", marginTop:"10px"}}>
                             {category}
                             <button id={styles.cross} onClick={() => removeCategory(category)}>
                                 X

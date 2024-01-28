@@ -4,12 +4,12 @@
     background-color: black;
     display: flex;
     padding-right: 20px;
-    min-height: 125vh;
+    min-height: 135vh;
 }
 
 .right {
     width: 37vw;
-    max-height: 80vh;
+    max-height: 100vh;
     max-width: 40vw;
     height: 80vh;
     padding-top: 5vh;
@@ -20,7 +20,7 @@
 
 .left {
     width: 45vw;
-    height: 80vh;
+    height: 100vh;
     padding-top: 10vh;
     text-align: center;
     padding-left: 5vw;
@@ -28,16 +28,26 @@
 }
 
 .heading {
-    font-size: 5rem;
-    color: green;
-    font-family: "Single Day", cursive;
+    font-family: "Single Day";
+    color: #72DB73;
+    font-family: "Single Day";
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 139.688%;
+    margin-left: -400px;
 }
 
 .subHeading {
-    font-size: 3rem;
-    color: white;
+    font-size: 4rem;
     text-align: left;
     margin-top: 4vh;
+    color: #FFF;
+    font-family: Roboto;
+    /* font-size: 61px; */
+    font-style: normal;
+    font-weight: 700;
+    line-height: 139.688%; /* 94.988px */
 }
 
 .signUp {
