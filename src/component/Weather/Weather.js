@@ -19,7 +19,7 @@ const Weather = () => {
     return (
         <div
             style={{
-                width: "38vw",
+                width: "33vw",
                 minHeight: "20vh",
                 background: "#101744",
                 borderRadius: "12px",
@@ -47,7 +47,8 @@ const Weather = () => {
                             display: "flex",
                             color: "white",
                             alignItems: "center",
-                            justifyContent: "space-evenly",
+                            justifyContent: "space-around",
+
                         }}
                     >
                         {" "}
@@ -55,33 +56,43 @@ const Weather = () => {
                             <img
                                 src={weather?.condition?.icon}
                                 style={{ width: "30px", height: "30px" }}
-                                alt="Weather condition icon"
+                                alt="condition icon"
                             />
                             <p>{weather?.condition?.text}</p>
                         </div>
-                        <div>
+                        <div style={{display:"flex", flexDirection:"column"}}>
+                            
                             <p
                                 style={{
                                     marginBottom: "12px",
-                                    fontSize: "24px",
+                                    fontSize: "2rem",
                                     marginTop: "10px",
                                 }}
                             >
-                                <span>{weather?.temp_c}</span>C
+                                <span>{weather?.temp_c}</span>°C
                             </p>
-                            <p>{"weather.current.pressure_mb"} pressure</p>
+                            <span>{weather?.pressure_mb} mbar</span>
+                            <p>pressure</p>
                         </div>
-                        <div>
+                        <div style={{display:"flex", flexDirection:"column"}}>
                             <p
                                 style={{
                                     marginBottom: "12px",
-                                    fontSize: "24px",
+                                    fontSize: "18px",
                                     marginTop: "10px",
                                 }}
                             >
-                                {"weather.current.wind_kph"} wind
+                                <span style={{fontSize:"1.2rempx"}}>{weather?.wind_kph}kmph</span> wind
                             </p>
-                            <p>{weather?.current?.humidity} humidity</p>
+                            <span>{weather?.humidity}%</span>
+                            <p
+                                style={{
+                                    marginBottom: "12px",
+                                    fontSize: "18px",
+                                    marginTop: "10px",
+                                }}
+                            >
+                                humidity</p>
                         </div>
                     </div>
                 ) : (

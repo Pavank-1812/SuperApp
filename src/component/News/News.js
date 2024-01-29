@@ -16,26 +16,32 @@ const News = () => {
     return (
         <div
             style={{
-                height: "90vh",
+                height: "86vh",
                 width: "30vw",
                 position: "relative",
                 borderRadius: "12px",
                 padding: "6px",
+                left:"2vw",
+                border:"2px solid red"
             }}
         >
             <img
                 src={news.urlToImage}
-                style={{ height: "60vh", borderRadius: "12px", width: "30vw" }}
+                style={{ height: "50vh", borderRadius: "12px", width: "29vw" }}
                 alt="News cover"
             />
             <div
                 style={{
-                    height: "38vh",
+                    height: "35vh",
                     borderRadius: "12px",
-                    width: "30vw",
-                    background: "white",
+                    width: "29vw",
+                    background: "#fff",
                     fontSize: "1.5rem",
-                    padding: "6px",
+                    padding: "12px",
+                    position:"absolute",
+                    bottom:"2vh",
+                    textAlign:"justify",
+                    // border:"2px solid green"
                 }}
             >
                 {news.description}
@@ -43,14 +49,16 @@ const News = () => {
             <div
                 style={{
                     position: "absolute",
-                    width: "30vw",
-                    height: "30vh",
+                    width: "29vw",
+                    height: "18vh",
                     background: "rgba(0, 0, 0, 0.74)",
-                    top: "44vh",
-                    padding: "24px",
+                    top: "30vh",
+                    padding: "25px",
                     boxSizing: "border-box",
                     overflow: "hidden",
-                    border:"2px solid green"
+                    textAlign:"center",
+                    zIndex:"10",
+                    // border:"2px solid green"
                 }}
             >
                 <p
