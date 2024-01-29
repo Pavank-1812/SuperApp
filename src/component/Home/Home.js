@@ -48,10 +48,11 @@ const Home = () => {
                     color: "white",
                     padding: "6px",
                     borderRadius: "18px",
-                    height:"5vh",
-                    width:"8vw",
+                    height:"5.5vh",
+                    width:"10vw",
                     fontWeight:"500",
-                    letterSpacing:"1.2px"
+                    letterSpacing:"1.2px",
+                    cursor:"pointer"
                 }}
             >
                 Browse

@@ -13,26 +13,27 @@ const ProfileCard = () => {
 
     // ASSIGNMENT: REPEAT THE SAME PROCESS AND SHOW THE GENRES
     // array.split(",")
-    // 1,2,3 => array.split(",")
+    // 1,2,3 => array.split(",");
 
     return (
         <div
             style={{
-                width: "38vw",
-                minHeight: "40vh",
+                width: "33vw",
+                minHeight: "30vh",
                 background: "#5746EA",
                 borderRadius: "12px",
                 padding: "6px",
                 display: "flex",
-                gap: "12px",
+                gap: "10px",
+                marginBottom:"20px"
             }}
         >
             <div>
                 <img
                     src={Profile}
                     style={{
-                        height: "32vh",
-                        width: "10vw",
+                        height: "25vh",
+                        width: "6vw",
                         position: "relative",
                         top: "2vh",
                     }}
@@ -42,17 +43,17 @@ const ProfileCard = () => {
                 style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "12px",
+                    gap: "6px",
                 }}
             >
-                <p style={{ color: "white", fontSize: "2rem" }}>
+                <p style={{ color: "white", fontSize: "1.5rem" }}>
                     {userDetails.name}
                 </p>
-                <p style={{ color: "white", fontSize: "2rem" }}>
+                <p style={{ color: "white", fontSize: "1.5rem" }}>
                     {userDetails.email}
                 </p>
-                <p style={{ color: "white", fontSize: "3rem" }}>
-                    {userDetails.username}
+                <p style={{ color: "white", fontSize: "1.5rem" }}>
+                    {userDetails.userName}
                 </p>
                 {/* <Chips categories={"genre"} color={"#9F94FF"} /> */}
             </div>
