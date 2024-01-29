@@ -1,10 +1,11 @@
 import axios from "axios";
-const DEFAULT_LOCATION = "Bangalore";
+const DEFAULT_LOCATION = "ongole";
 
 export const getWeatherDetails = async () => {
     try {
-        const reqUrl = `http://api.weatherapi.com/v1/current.json?key=987de39fe8924052ada80850232502&q=${DEFAULT_LOCATION}`;
+        const reqUrl = `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${DEFAULT_LOCATION}`;
         const response = await axios.get(reqUrl);
+        console.log(response.data);
         return response.data;
     } catch (error) {
         console.log(error);
