@@ -4,7 +4,7 @@ export const getNewsDetails = async () => {
     try {
         const reqUrl = `https://newsapi.org/v2/everything?q=Apple&apiKey=${process.env.REACT_APP_API_KEY}`;
         const response = await axios.get(reqUrl);
-        return response.data.articles[5];
+        return response.data.articles[4];
     } catch (error) {
         console.log(error);
         // toast for error
