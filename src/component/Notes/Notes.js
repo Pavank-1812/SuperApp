@@ -21,8 +21,8 @@ const Notes = () => {
             style={{
                 color: "white",
                 background: "#F1C75B",
-                height: "60vh",
-                width: "25vw",
+                height: "56vh",
+                width: "27vw",
                 position: "relative",
                 borderRadius: "12px",
                 padding: "6px",
@@ -31,12 +31,13 @@ const Notes = () => {
             <p style={{ color: "black", fontSize: "2rem" }}>All notes</p>
             <textarea
                 style={{
-                    width: "28vw",
+                    width: "27vw",
                     height: "55vh",
                     margin: "auto",
                     border: "none",
                     background: "transparent",
-                    outline: 0,
+                    outline: "none",
+                    textDecoration:"none"
                 }}
                 value={notesData}
                 onChange={handleSaveNotes}
