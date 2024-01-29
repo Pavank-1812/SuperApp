@@ -16,13 +16,13 @@ const News = () => {
     return (
         <div
             style={{
-                height: "86vh",
+                height: "90vh",
                 width: "30vw",
                 position: "relative",
                 borderRadius: "12px",
                 padding: "6px",
                 left:"2vw",
-                border:"2px solid red"
+                // border:"2px solid red"
             }}
         >
             <img
@@ -32,12 +32,13 @@ const News = () => {
             />
             <div
                 style={{
-                    height: "35vh",
-                    borderRadius: "12px",
+                    height: "40vh",
+                    borderBottomLeftRadius:"12px",
+                    borderBottomRightRadius:"12px",
                     width: "29vw",
                     background: "#fff",
-                    fontSize: "1.5rem",
-                    padding: "12px",
+                    fontSize: "1.4rem",
+                    padding: "20px",
                     position:"absolute",
                     bottom:"2vh",
                     textAlign:"justify",
@@ -50,9 +51,9 @@ const News = () => {
                 style={{
                     position: "absolute",
                     width: "29vw",
-                    height: "18vh",
+                    height: "15vh",
                     background: "rgba(0, 0, 0, 0.74)",
-                    top: "30vh",
+                    top: "33vh",
                     padding: "25px",
                     boxSizing: "border-box",
                     overflow: "hidden",
@@ -64,7 +65,7 @@ const News = () => {
                 <p
                     style={{
                         color: "white",
-                        fontSize: "1.5rem",
+                        fontSize: "1.2rem",
                         marginBottom: "10px",
                     }}
                 >

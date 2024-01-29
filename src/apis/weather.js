@@ -1,5 +1,5 @@
 import axios from "axios";
-const DEFAULT_LOCATION = "ongole";
+const DEFAULT_LOCATION = "mumbai";
 
 export const getWeatherDetails = async () => {
     try {

@@ -68,11 +68,11 @@ const Timer = () => {
     return (
         <div
             style={{
-                width: "61vw",
+                width: "63vw",
                 height: "32vh",
                 background: "#1E2343",
                 position: "absolute",
-                borderRadius: "12px",
+                borderRadius: "15px",
                 marginTop: "20px",
                 display: "flex",
                 boxSizing: "border-box",
