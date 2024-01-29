@@ -69,7 +69,7 @@ const Weather = () => {
                                     marginTop: "8px",
                                 }}
                             >
-                                <span>{weather?.temp_c}</span>°C
+                                <span>{weather?.temp_c}°C</span>
                             </p>
                             <p>Pressure-</p>
                             <span style={{fontSize:"0.8rem", marginBottom:"10px"}}>{weather?.pressure_mb} mbar</span>
@@ -83,7 +83,7 @@ const Weather = () => {
                                     marginTop: "10px",
                                 }}
                                 >
-                                Wind Speed-<span style={{fontSize:"0.8rem"}}>{weather?.wind_kph}kmph</span> 
+                                Wind Speed-<span style={{fontSize:"0.8rem"}}>{weather?.wind_kph} kmph</span> 
                             </p>
                             
                                 
