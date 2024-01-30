@@ -2,6 +2,7 @@ import Profile from "../../assets/images/profileSmall.png";
 import { useNavigate } from "react-router-dom";
 import { getMovies } from "../../apis/movies";
 import { useEffect, useState } from "react";
+import styles from '../../component/Movies/Movies.module.css'
 
 // import styles from "../components/Movies/List.module.css";
 
@@ -17,17 +18,17 @@ const Movies = () => {
         fetchMovies();
     }, []);
 
-    useEffect(() => {
-        let userDetails = localStorage.getItem("userData");
+    // useEffect(() => {
+    //     let userDetails = localStorage.getItem("userData");
 
-        if (userDetails) {
-            userDetails = JSON.parse(userDetails);
-            navigate("/register");
-        }
-    }, []);
+    //     if (userDetails) {
+    //         userDetails = JSON.parse(userDetails);
+    //         navigate("/register");
+    //     }
+    // }, []);
 
     const fetchMovies = async () => {
-        const response = await getMovies("fiction");
+        const response = await getMovies('fiction');
         setMoviesList(response.Search);
     };
 
@@ -56,23 +57,24 @@ const Movies = () => {
                 </div>
                 <p
                     style={{
-                        color: "green",
-                        fontSize: "3rem",
-                        margin: "1vw",
+                        color: "#72DB73",
+                        fontSize: "2.8rem",
+                        margin: "2vw",
+                        fontfamily: "Single Day"
                     }}
-                    // className={styles.header}
+                    className={styles.heading}
                 >
                     Super app
                 </p>
-                <p style={{ color: "white", fontSize: "2rem", margin: "2vw" }}>
+                <p style={{ color: "white", fontSize: "2rem", margin: "2vw" }} className={styles.subheading}>
                     Entertainment according to your choice
                 </p>
-                {/* {movies.map((movie) => (
-                    <List genre={movie} />
-                ))} */}
-                {moviesList.map((movie) => (
-                    <div style={{ color: "white" }}>{movie.Title}</div>
-                ))}
+                <div>
+                    {moviesList.map((movie) => (
+                        <div style={{ color: "white" }}>{movie.Title}</div>
+                    )
+                    )}
+                </div>
             </div>
         </>
     );
