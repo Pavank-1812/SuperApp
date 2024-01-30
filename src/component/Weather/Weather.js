@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { getWeatherDetails } from "../../apis/weather";
+import drop from '../../assets/icons/drop.svg'
+import wind from '../../assets/icons/wind.svg'
 
 const Weather = () => {
     const [date, setDate] = useState("");
@@ -28,7 +30,7 @@ const Weather = () => {
         >
             <div
                 style={{
-                    height: "7vh",
+                    height: "5vh",
                     background: "#FF4ADE",
                     borderRadius: "12px",
                     color: "white",
@@ -51,7 +53,7 @@ const Weather = () => {
                         }}
                     >
                         {" "}
-                        <div style={{width:"5vw", marginLeft:"12px"}}>
+                        <div style={{ width: "5vw", marginLeft: "12px" }}>
                             <img
                                 src={weather?.condition?.icon}
                                 style={{ width: "45px", height: "45px" }}
@@ -59,9 +61,10 @@ const Weather = () => {
                             />
                             <p>{weather?.condition?.text}</p>
                         </div>
-                        <hr style={{direction:"vertical", height:"50px"}} />
-                        <div style={{display:"flex", flexDirection:"column", width:"7vw",alignItems:"center"}}>
-                            
+                        <hr style={{ direction: "vertical", height: "50px" }} />
+
+                        <div style={{ display: "flex", flexDirection: "column", width: "7vw", alignItems: "center" }}>
+
                             <p
                                 style={{
                                     marginBottom: "6px",
@@ -72,21 +75,15 @@ const Weather = () => {
                                 <span>{weather?.temp_c}°C</span>
                             </p>
                             <p>Pressure-</p>
-                            <span style={{fontSize:"0.8rem", marginBottom:"10px"}}>{weather?.pressure_mb} mbar</span>
+                            <span style={{ fontSize: "0.8rem", marginBottom: "10px" }}>{weather?.pressure_mb} mbar</span>
                         </div>
-                        <hr style={{direction:"vertical", height:"50px", width:"1px"}} />
-                        <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                            <p
-                                style={{
-                                    marginBottom: "12px",
-                                    fontSize: "0.9rem",
-                                    marginTop: "10px",
-                                }}
-                                >
-                                Wind Speed-<span style={{fontSize:"0.8rem"}}>{weather?.wind_kph} kmph</span> 
-                            </p>
-                            
-                                
+                        <hr style={{ direction: "vertical", height: "50px", width: "1px" }} />
+                        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                            <img
+                                src={wind}
+                                style={{ width: "15px", height: "15px", marginTop:"10px" }}
+                                alt="condition icon"
+                            />
                             <p
                                 style={{
                                     marginBottom: "12px",
@@ -94,7 +91,25 @@ const Weather = () => {
                                     marginTop: "10px",
                                 }}
                             >
-                                Humidity-<span style={{fontSize:"0.8rem"}}>{weather?.humidity}%</span></p>
+                                Wind Speed-<span style={{ fontSize: "0.8rem" }}>{weather?.wind_kph} kmph</span>
+                            </p>
+
+                            <img
+                                src={drop}
+                                style={{ width: "12px", height: "12px" }}
+                                alt="condition icon"
+                            />
+
+
+                            <p
+                                style={{
+                                    marginBottom: "12px",
+                                    fontSize: "0.9rem",
+                                    marginTop: "10px",
+                                    display: "inline"
+                                }}
+                            >
+                                Humidity-<span style={{ fontSize: "0.8rem" }}>{weather?.humidity}%</span></p>
                         </div>
                     </div>
                 ) : (
