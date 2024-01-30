@@ -61,10 +61,6 @@ const Timer = () => {
         setTimeInSeconds(convertedTime);
     }, [seconds, minutes, hours]);
 
-    // todos
-    // look for the fix for negative value in timer package when i stop the timer
-    // conditional routing on register
-
     return (
         <div
             style={{
