@@ -93,7 +93,7 @@ const Category = () => {
         };
 
     const handleSubmit = () => {
-        if (!categories.length) {
+        if (categories.length<3) {
             setLengthError(true);
             return;
         }
