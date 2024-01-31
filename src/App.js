@@ -5,20 +5,10 @@ import Genre from "../src/pages/GenrePage/Genre.js"
 import HomePage from "./component/Home/Home.js";
 import MoviePage from "./pages/MoviesPage/MoviePage.js";
 import { Component } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 function App() {
-  
-  
-  useEffect(() => {
-    let userDetails = localStorage.getItem("userData");
-
-    if(userDetails) {
-      userDetails = JSON.parse(userDetails);
-    }
-
-    }, [])
-
   return  (
     <BrowserRouter>
       <Routes>
