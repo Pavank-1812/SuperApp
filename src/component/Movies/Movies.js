@@ -53,7 +53,7 @@ const Movies = () => {
                             right: "3vw",
                             height: "60px",
                             width: "60px",
-                            cursor:"pointer",
+                            cursor: "pointer",
                         }}
                     />
                 </div>
@@ -71,14 +71,14 @@ const Movies = () => {
                 <p style={{ color: "white", fontSize: "2rem", margin: "2vw" }} className={styles.subheading}>
                     Entertainment according to your choice
                 </p>
-                <div style={{display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center"}}>
-                    {moviesList.map((movie) => (
-                        <div style={{ color: "white" }}>
-                            <img style={{height:"70vh", width:"25vw", marginTop:"5vh",}} alt="Poster" src={movie.Poster}></img>
-                            <p style={{textAlign:"center", marginTop:"1vh"}}>{movie.Title}</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center" }}>
+                    {moviesList.map((movie, index) => (
+                        <div key={index} style={{ color: "white" }}>
+                            <img style={{ height: "70vh", width: "25vw", marginTop: "5vh" }} alt="Poster" src={movie.Poster}></img>
+                            <p style={{ textAlign: "center", marginTop: "1vh" }}>{movie.Title}</p>
                         </div>
-                    )
-                    )}
+                    ))}
+
                 </div>
             </div>
         </>
