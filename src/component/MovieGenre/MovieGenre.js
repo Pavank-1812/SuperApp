@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 import action from "../../assets/images/action.png";
@@ -29,51 +29,51 @@ const DEFAULT_GENRES = [
     {
         id: "Drama",
         color: "#D7A4FF",
-        image: <img style={{ width: "160px", height: "120px" }} src={drama} />,
+        image: <img style={{ width: "160px", height: "120px" }} alt="drama" src={drama} />,
     },
     {
         id: "Fantasy",
         color: " #FF4ADE",
         image: (
-            <img style={{ width: "160px", height: "120px" }} src={fantasy} />
+            <img style={{ width: "160px", height: "120px" }} alt="fantasy" src={fantasy} />
         ),
     },
     {
         id: "Fiction",
         color: "#6CD061",
         image: (
-            <img style={{ width: "160px", height: "120px" }} src={fiction} />
+            <img style={{ width: "160px", height: "120px" }} alt="fiction" src={fiction} />
         ),
     },
     {
         id: "Horror",
         color: "#7358FF",
-        image: <img style={{ width: "160px", height: "120px" }} src={horror} />,
+        image: <img style={{ width: "160px", height: "120px" }} alt="horror" src={horror} />,
     },
     {
         id: "Music",
         color: "#E61E32",
-        image: <img style={{ width: "160px", height: "120px" }} src={music} />,
+        image: <img style={{ width: "160px", height: "120px" }} alt="music" src={music} />,
     },
     {
         id: "Romance",
         color: "#11B800",
         image: (
-            <img style={{ width: "160px", height: "120px" }} src={romance} />
+            <img style={{ width: "160px", height: "120px" }} alt="romance" src={romance} />
         ),
     },
     {
         id: "Thriller",
         color: "#84C2FF",
         image: (
-            <img style={{ width: "160px", height: "120px" }} src={thriller} />
+            <img style={{ width: "160px", height: "120px" }} alt="thriller" src={thriller} />
         ),
     },
     {
         id: "Western",
         color: "#912500",
         image: (
-            <img style={{ width: "160px", height: "120px" }} src={western} />
+            <img style={{ width: "160px", height: "120px" }} alt="western" src={western} />
         ),
     },
 ];
@@ -98,7 +98,7 @@ const Category = () => {
             return;
         }
         localStorage.setItem("genre", categories);
-        navigate("/");
+        navigate("/HomePage");
     };
 
     return (

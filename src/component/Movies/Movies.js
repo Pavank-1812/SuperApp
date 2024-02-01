@@ -11,7 +11,7 @@ const Movies = () => {
     const navigate = useNavigate();
 
     const navigateToHome = () => {
-        navigate("/");
+        navigate("/HomePage");
     };
 
     useEffect(() => {
@@ -52,7 +52,8 @@ const Movies = () => {
                             right: "3vw",
                             height: "60px",
                             width: "60px",
-                            cursor:"pointer"
+                            cursor:"pointer",
+                            alt:"profile"
                         }}
                     />
                 </div>
@@ -73,7 +74,7 @@ const Movies = () => {
                 <div style={{display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center"}}>
                     {moviesList.map((movie) => (
                         <div style={{ color: "white" }}>
-                            <img style={{height:"70vh", width:"25vw", marginTop:"5vh", }} src={movie.Poster}></img>
+                            <img style={{height:"70vh", width:"25vw", marginTop:"5vh", alt:"Poster" }} src={movie.Poster}></img>
                             <p style={{textAlign:"center", marginTop:"1vh"}}>{movie.Title}</p>
                         </div>
                     )
