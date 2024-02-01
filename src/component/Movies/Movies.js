@@ -46,6 +46,7 @@ const Movies = () => {
                 <div onClick={navigateToHome}>
                     <img
                         src={Profile}
+                        alt="profile"
                         style={{
                             position: "absolute",
                             top: "2vh",
@@ -53,7 +54,6 @@ const Movies = () => {
                             height: "60px",
                             width: "60px",
                             cursor:"pointer",
-                            alt:"profile"
                         }}
                     />
                 </div>
@@ -74,7 +74,7 @@ const Movies = () => {
                 <div style={{display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center"}}>
                     {moviesList.map((movie) => (
                         <div style={{ color: "white" }}>
-                            <img style={{height:"70vh", width:"25vw", marginTop:"5vh", alt:"Poster" }} src={movie.Poster}></img>
+                            <img style={{height:"70vh", width:"25vw", marginTop:"5vh",}} alt="Poster" src={movie.Poster}></img>
                             <p style={{textAlign:"center", marginTop:"1vh"}}>{movie.Title}</p>
                         </div>
                     )
