@@ -6,7 +6,11 @@ const ProfileCard = () => {
         userDetails = JSON.parse(userDetails);
     }
 
-
+    let genre = localStorage.getItem("genre");
+    if (genre) {
+        // Split the comma-separated string into an array
+        genre = genre.split(',');
+    }
     return (
         <div
             style={{
@@ -17,7 +21,7 @@ const ProfileCard = () => {
                 padding: "6px",
                 display: "flex",
                 gap: "10px",
-                marginBottom:"20px"
+                marginBottom: "20px"
             }}
         >
             <div>
@@ -36,6 +40,7 @@ const ProfileCard = () => {
                     display: "flex",
                     flexDirection: "column",
                     gap: "6px",
+                    padding:"4px"
                 }}
             >
                 <p style={{ color: "white", fontSize: "1.5rem" }}>
@@ -47,7 +52,12 @@ const ProfileCard = () => {
                 <p style={{ color: "white", fontSize: "1.5rem" }}>
                     {userDetails.userName}
                 </p>
-                {/* <Chips categories={"genre"} color={"#9F94FF"} /> */}
+                <div>
+                    {genre.map((genreItem) => (
+                        <button style={{borderRadius:"12px", height:"30px", width:"70px", margin:"3px",backgroundColor:"#9F94FF", outline:"none", border:"none",color:"#ffffff"}} key={genreItem}>{genreItem}</button>
+                    ))}
+
+                </div>
             </div>
         </div>
     );

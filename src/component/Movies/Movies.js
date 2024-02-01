@@ -28,7 +28,7 @@ const Movies = () => {
     // }, []);
 
     const fetchMovies = async () => {
-        const response = await getMovies('fiction');
+        const response = await getMovies('man');
         setMoviesList(response.Search);
     };
 
@@ -69,9 +69,12 @@ const Movies = () => {
                 <p style={{ color: "white", fontSize: "2rem", margin: "2vw" }} className={styles.subheading}>
                     Entertainment according to your choice
                 </p>
-                <div>
+                <div style={{display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center"}}>
                     {moviesList.map((movie) => (
-                        <div style={{ color: "white" }}>{movie.Title}</div>
+                        <div style={{ color: "white" }}>
+                            <img style={{height:"70vh", width:"25vw", marginTop:"5vh", }} src={movie.Poster}></img>
+                            <p style={{textAlign:"center", marginTop:"1vh"}}>{movie.Title}</p>
+                        </div>
                     )
                     )}
                 </div>
