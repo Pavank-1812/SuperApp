@@ -9,7 +9,6 @@ const Weather = () => {
 
     useEffect(() => {
         fetchWeatherDetails();
-        console.log(weather);
     }, []);
 
     const fetchWeatherDetails = async () => {
