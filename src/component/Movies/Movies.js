@@ -52,6 +52,7 @@ const Movies = () => {
                             right: "3vw",
                             height: "60px",
                             width: "60px",
+                            cursor:"pointer"
                         }}
                     />
                 </div>

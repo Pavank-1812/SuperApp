@@ -4,7 +4,7 @@
     background-color: black;
     display: flex;
     padding-right: 20px;
-    min-height: 135vh;
+    min-height: 130vh;
 }
 
 .right {
@@ -55,11 +55,16 @@
     background: green;
     border-radius: 12px;
     border: none;
-    padding: 12px;
-    height: 50px;
+    padding: 10px;
+    height: 40px;
     width: 10%;
     position: relative;
-    top: 115vh;
+    top: 110vh;
+    right: 3vw;
+    cursor: pointer;
+    letter-spacing: 1.4px;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .error {
