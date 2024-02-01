@@ -36,50 +36,44 @@ export default function Register() {
     // console.log(event.target.value);
     if (event.target.name == "check") {
       setFormData({ ...formData, [event.target.name]: event.target.checked });
-      console.log(formData);
+      // console.log(formData);
     } else {
       setFormData({ ...formData, [event.target.name]: event.target.value });
-      console.log(formData);
+      // console.log(formData);
     }
   };
 
   const handleSubmit = (event) => {
-    // console.log(formData);
-    // let isValid = true;
     event.preventDefault();
     const errors = {};
     if (!formData.name.trim().length) {
       setNameError(true);
-      // setNameError({ ...errors, name: "Dynamic error message" })
       errors.name = "Name Rquired";
-      // isValid = false;
+      
     }
     if (!formData.email.trim().length) {
       setEmailError(true);
       errors.email = "Email is Rquired";
-      // isValid = false;
+      
 
     }
     if (!formData.userName.trim().length) {
       setUserNameError(true);
       errors.userName = "UserName is Rquired";
-      // isValid = false;
+      
 
     }
     if (!formData.mobile.trim().length) {
       setMobileError(true);
       errors.mobile = "Mobile Number is Rquired";
-      // isValid = false;
+      
     }
     if (!formData.isAgreed) {
       setIsAgreedError(true);
       errors.isAgreed = "Check this box if you want to proceed";
-      // isValid = false;
+  
     }
-    // if(isValid){
-    // localStorage.setItem("userData", formData);
-    // navigate("/genre")
-    // }
+  
 
     setErrors(errors);
 
@@ -89,7 +83,7 @@ export default function Register() {
     }
   };
   useEffect(() => {
-    console.log(errors);
+    // console.log(errors);
   }, [errors]);
   return (
     <div className={styles.container}>
@@ -128,7 +122,6 @@ export default function Register() {
             <label className={styles.check}>
               <input
                 onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.checked })}
-                // onChange={(event) => handleChange(event)}
                 type='checkbox'
                 name='isAgreed'
               />&nbsp;
