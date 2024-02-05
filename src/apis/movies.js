@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getMovies = async (title) => {
     try {
-        const reqUrl = ` https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIES_API_KEY}&s=${title}`;
+        const reqUrl = ` https://www.omdbapi.com/?apikey=c5451c55&s=${title}`;
         // http://www.omdbapi.com/?apikey=55bc8bb6&s=[fiction,horror,drama]
         const response = await axios.get(reqUrl);
         return response.data;

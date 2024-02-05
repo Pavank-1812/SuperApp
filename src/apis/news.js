@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getNewsDetails = async () => {
     try {
-        const reqUrl = `https://newsapi.org/v2/everything?q=Apple&apiKey=${process.env.REACT_APP_API_KEY}`;
+        const reqUrl = `https://newsapi.org/v2/everything?q=Apple&apiKey=af18686e24504d95b88d15c3c83a149f`;
         const response = await axios.get(reqUrl);
         const randomNumber = Math.floor(Math.random() * 10)+90;
         return response.data.articles[randomNumber];

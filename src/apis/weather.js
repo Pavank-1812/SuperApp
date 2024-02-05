@@ -3,7 +3,7 @@ const DEFAULT_LOCATION = "mumbai";
 
 export const getWeatherDetails = async () => {
     try {
-        const reqUrl = `https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${DEFAULT_LOCATION}`;
+        const reqUrl = `https://api.weatherapi.com/v1/current.json?key=224a3bf507084b9698483846242901&q=${DEFAULT_LOCATION}`;
         const response = await axios.get(reqUrl);
         return response.data;
     } catch (error) {
