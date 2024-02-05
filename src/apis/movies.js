@@ -8,5 +8,6 @@ export const getMovies = async (title) => {
         return response.data;
     } catch (error) {
         console.log(error);
+        alert("Something went wrong! Please try again after some time");
     }
 };
