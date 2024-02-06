@@ -25,11 +25,11 @@ const News = () => {
                 // border:"2px solid red"
             }}
         >
-            <img
+            {/* <img
                 src={news.urlToImage}
                 style={{ height: "50vh", borderRadius: "12px", width: "29vw" }}
                 alt="News cover"
-            />
+            /> */}
             <div
                 style={{
                     height: "40vh",
