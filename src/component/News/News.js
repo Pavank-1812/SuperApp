@@ -33,7 +33,7 @@ const News = () => {
                         alt="News cover"
                     />
                 ) : (
-                    <p>Error: News image not available</p>
+                    <p style={{color:"#ffffff"}}>Error: News image not available</p>
                 )}
                 <div
                     style={{
