@@ -25,11 +25,11 @@ const News = () => {
                 // border:"2px solid red"
             }}
         >
-            {/* <img
-                src={news.urlToImage}
+            <img
+                src={news.urlToImage ? news.urlToImage : "No image available, api is not working"}
                 style={{ height: "50vh", borderRadius: "12px", width: "29vw" }}
                 alt="News cover"
-            /> */}
+            />
             <div
                 style={{
                     height: "40vh",
@@ -45,7 +45,7 @@ const News = () => {
                     // border:"2px solid green"
                 }}
             >
-                {news.description}
+                {news.description ? news.description : "No description available"}
             </div>
             <div
                 style={{
