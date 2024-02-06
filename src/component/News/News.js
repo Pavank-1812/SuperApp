@@ -79,7 +79,8 @@ const News = () => {
                         marginBottom: "10px",
                     }}
                 >
-                    {news.title}
+                    {/* {news.title} */}
+                    {news && news.title ? news.title : "Title Not Available"}
                 </p>
             </div>
         </div>
