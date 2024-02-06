@@ -21,31 +21,41 @@ const News = () => {
                 position: "relative",
                 borderRadius: "12px",
                 padding: "6px",
-                left:"2vw",
+                left: "2vw",
                 // border:"2px solid red"
             }}
         >
-            <img
-                src={news.urlToImage ? news.urlToImage : "No image available, api is not working"}
-                style={{ height: "50vh", borderRadius: "12px", width: "29vw" }}
-                alt="News cover"
-            />
-            <div
-                style={{
-                    height: "40vh",
-                    borderBottomLeftRadius:"12px",
-                    borderBottomRightRadius:"12px",
-                    width: "29vw",
-                    background: "#fff",
-                    fontSize: "1.4rem",
-                    padding: "20px",
-                    position:"absolute",
-                    bottom:"2vh",
-                    textAlign:"justify",
-                    // border:"2px solid green"
-                }}
-            >
-                {news.description ? news.description : "No description available"}
+            <div>
+                {news && typeof news === 'object' && news.urlToImage ? (
+                    <img
+                        src={news.urlToImage}
+                        style={{ height: "50vh", borderRadius: "12px", width: "29vw" }}
+                        alt="News cover"
+                    />
+                ) : (
+                    <p>Error: News image not available</p>
+                )}
+                <div
+                    style={{
+                        height: "40vh",
+                        borderBottomLeftRadius: "12px",
+                        borderBottomRightRadius: "12px",
+                        width: "29vw",
+                        background: "#fff",
+                        fontSize: "1.4rem",
+                        padding: "20px",
+                        position: "absolute",
+                        bottom: "2vh",
+                        textAlign: "justify",
+                        // border:"2px solid green"
+                    }}
+                >
+                    {news && typeof news === 'object' && news.description ? (
+                        news.description
+                    ) : (
+                        <p>Error: News description not available</p>
+                    )}
+                </div>
             </div>
             <div
                 style={{
@@ -57,8 +67,8 @@ const News = () => {
                     padding: "25px",
                     boxSizing: "border-box",
                     overflow: "hidden",
-                    textAlign:"center",
-                    zIndex:"10",
+                    textAlign: "center",
+                    zIndex: "10",
                     // border:"2px solid green"
                 }}
             >
