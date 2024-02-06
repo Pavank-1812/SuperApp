@@ -8,7 +8,7 @@ export const getNewsDetails = async () => {
         const randomNumber = Math.floor(Math.random() * 10)+80;
         return response.data.articles[randomNumber];
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         // toast for error
         alert("Something went wrong! Please try again after some time");
     }
