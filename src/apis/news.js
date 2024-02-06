@@ -4,7 +4,7 @@ export const getNewsDetails = async () => {
     try {
         const reqUrl = `https://newsapi.org/v2/everything?q=Apple&apiKey=af18686e24504d95b88d15c3c83a149f`;
         const response = await axios.get(reqUrl);
-        // console.log(response.data);
+        console.log(response.data);
         const randomNumber = Math.floor(Math.random() * 10)+80;
         return response.data.articles[randomNumber];
     } catch (error) {
