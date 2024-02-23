@@ -40,7 +40,8 @@ const Notes = () => {
                     textDecoration:"none",
                     lineHeight:"1.4rem",
                     textAlign:"justify",
-                    padding:"10px"
+                    padding:"10px",
+                    resize:"none"
                 }}
                 value={notesData}
                 onChange={handleSaveNotes}
