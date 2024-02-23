@@ -29,7 +29,7 @@ const Notes = () => {
             }}
         >
             <p style={{ color: "black", fontSize: "2rem" }}>All notes</p>
-            <textarea
+            <textarea placeholder="Write your text here..."
                 style={{
                     width: "28vw",
                     height: "45vh",
